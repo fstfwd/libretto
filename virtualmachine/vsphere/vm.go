@@ -3,6 +3,7 @@
 package vsphere
 
 import (
+	"context"
 	"errors"
 	"fmt"
 	"io"
@@ -20,8 +21,6 @@ import (
 	"github.com/vmware/govmomi/find"
 	"github.com/vmware/govmomi/object"
 	"github.com/vmware/govmomi/vim25/types"
-
-	"golang.org/x/net/context"
 )
 
 type vmwareFinder struct {

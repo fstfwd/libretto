@@ -3,6 +3,7 @@
 package vsphere
 
 import (
+	"context"
 	"crypto/tls"
 	"errors"
 	"fmt"
@@ -15,8 +16,6 @@ import (
 	"path/filepath"
 	"regexp"
 	"strings"
-
-	"golang.org/x/net/context"
 
 	"github.com/vmware/govmomi"
 	"github.com/vmware/govmomi/find"

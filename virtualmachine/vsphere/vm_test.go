@@ -3,6 +3,7 @@
 package vsphere
 
 import (
+	"context"
 	"errors"
 	"fmt"
 	"io"
@@ -11,8 +12,6 @@ import (
 	"regexp"
 	"strings"
 	"testing"
-
-	"golang.org/x/net/context"
 
 	"github.com/apcera/libretto/virtualmachine"
 	"github.com/vmware/govmomi"
