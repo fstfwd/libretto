@@ -196,11 +196,11 @@ func (vm *VM) getPublicIP(authorizer *azure.ServicePrincipalToken) (net.IP, erro
 		return nil, err
 	}
 
-	if resPublicIP.Properties == nil || resPublicIP.Properties.IPAddress == nil ||
-		*resPublicIP.Properties.IPAddress == "" {
+	if resPublicIP.PublicIPAddressPropertiesFormat == nil || resPublicIP.PublicIPAddressPropertiesFormat.IPAddress == nil ||
+		*resPublicIP.PublicIPAddressPropertiesFormat.IPAddress == "" {
 		return nil, fmt.Errorf("VM has no public IP address")
 	}
-	return net.ParseIP(*resPublicIP.Properties.IPAddress), nil
+	return net.ParseIP(*resPublicIP.PublicIPAddressPropertiesFormat.IPAddress), nil
 }
 
 // getPrivateIP returns the private IP of the given VM, if exists one.
@@ -208,20 +208,20 @@ func (vm *VM) getPrivateIP(authorizer *azure.ServicePrincipalToken) (net.IP, err
 	interfaceClient := network.NewInterfacesClient(vm.Creds.SubscriptionID)
 	interfaceClient.Authorizer = authorizer
 
-	resPrivateIP, err := interfaceClient.Get(vm.ResourceGroup, vm.Nic, "")
+	iface, err := interfaceClient.Get(vm.ResourceGroup, vm.Nic, "")
 	if err != nil {
 		return nil, err
 	}
 
-	if resPrivateIP.Properties == nil || resPrivateIP.Properties.IPConfigurations == nil ||
-		len(*resPrivateIP.Properties.IPConfigurations) == 0 {
+	if iface.InterfacePropertiesFormat == nil || iface.InterfacePropertiesFormat.IPConfigurations == nil ||
+		len(*iface.InterfacePropertiesFormat.IPConfigurations) == 0 {
 		return nil, fmt.Errorf("VM has no private IP address")
 	}
-	ipConfigs := *resPrivateIP.Properties.IPConfigurations
+	ipConfigs := *iface.InterfacePropertiesFormat.IPConfigurations
 	if len(ipConfigs) > 1 {
 		return nil, fmt.Errorf("VM has multiple private IP addresses")
 	}
-	return net.ParseIP(*ipConfigs[0].Properties.PrivateIPAddress), nil
+	return net.ParseIP(*ipConfigs[0].InterfaceIPConfigurationPropertiesFormat.PrivateIPAddress), nil
 }
 
 // deleteOSFile deletes the OS file from the VM's storage account, returns an error if the operation
@@ -234,8 +234,11 @@ func (vm *VM) deleteVMFiles(authorizer *azure.ServicePrincipalToken) error {
 	if err != nil {
 		return err
 	}
+	if len(accountKeys.Keys) == 0 {
+		return fmt.Errorf("no account keys for %q", vm.StorageAccount.Name)
+	}
 
-	storageClient, err := storage.NewBasicClient(vm.StorageAccount, *accountKeys.Key1)
+	storageClient, err := storage.NewBasicClient(vm.StorageAccount, *accountKeys.Keys[0].Value)
 	if err != nil {
 		return err
 	}

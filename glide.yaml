@@ -1,0 +1,63 @@
+package: github.com/apcera/libretto
+import:
+- package: github.com/Azure/azure-sdk-for-go
+  version: ^8.1.1-beta
+  subpackages:
+  - arm/compute
+  - arm/network
+  - arm/resources/resources
+  - arm/storage
+  - management
+  - management/hostedservice
+  - management/virtualmachine
+  - management/virtualnetwork
+  - management/vmutils
+  - storage
+- package: github.com/Azure/go-autorest
+  version: ^7.3.0
+  subpackages:
+  - autorest/azure
+- package: github.com/apcera/util
+  subpackages:
+  - uuid
+- package: github.com/aws/aws-sdk-go
+  version: ^1.7.8
+  subpackages:
+  - aws
+  - aws/awserr
+  - aws/credentials
+  - aws/session
+  - service/ec2
+- package: github.com/gophercloud/gophercloud
+  subpackages:
+  - openstack
+  - openstack/blockstorage/v1/volumes
+  - openstack/compute/v2/extensions/floatingips
+  - openstack/compute/v2/extensions/startstop
+  - openstack/compute/v2/extensions/volumeattach
+  - openstack/compute/v2/flavors
+  - openstack/compute/v2/images
+  - openstack/compute/v2/servers
+  - openstack/networking/v2/networks
+- package: github.com/pyr/egoscale
+  subpackages:
+  - src/egoscale
+- package: github.com/vmware/govmomi
+  version: ^0.13.0
+  subpackages:
+  - find
+  - object
+  - property
+  - vim25
+  - vim25/mo
+  - vim25/types
+- package: golang.org/x/crypto
+  subpackages:
+  - ssh
+- package: golang.org/x/oauth2
+  subpackages:
+  - google
+  - jwt
+- package: google.golang.org/api
+  subpackages:
+  - compute/v1

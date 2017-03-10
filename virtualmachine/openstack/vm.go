@@ -270,7 +270,7 @@ func (vm *VM) Provision() error {
 		return cleanup(fmt.Errorf("unable to create a floating ip: %s", err))
 	}
 
-	err = floatingips.Associate(client, server.ID, fip.IP).ExtractErr()
+	err = floatingips.AssociateInstance(client, server.ID, AssociateOps{FloatingIP: fip.IP}).ExtractErr()
 	if err != nil {
 		errFipDelete := floatingips.Delete(client, fip.ID).ExtractErr()
 		err = fmt.Errorf("%s %s", err, errFipDelete)
@@ -352,7 +352,7 @@ func (vm *VM) Destroy() error {
 	// Delete the floating IP first before destroying the VM
 	var errors []error
 	if vm.FloatingIP != nil {
-		err = floatingips.Disassociate(client, vm.InstanceID, vm.FloatingIP.IP).ExtractErr()
+		err = floatingips.DisassociateInstance(client, vm.InstanceID, DisassociateOpts{vm.FloatingIP.IP}).ExtractErr()
 		if err != nil {
 			errors = append(errors, fmt.Errorf("unable to disassociate floating ip from instance: %s", err))
 		} else {

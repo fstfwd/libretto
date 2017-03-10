@@ -1,0 +1,13 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "github.com/remyoudompheng/go-liblzma",
+			"repository": "https://github.com/remyoudompheng/go-liblzma",
+			"vcs": "git",
+			"revision": "e592d11004fad5273ee038602d775382a6dffeec",
+			"branch": "HEAD",
+			"notests": true
+		}
+	]
+}

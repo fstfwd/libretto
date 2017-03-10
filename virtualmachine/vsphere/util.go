@@ -213,7 +213,7 @@ var createNetworkMapping = func(vm *VM, networks map[string]string, networkMors 
 var resetUnitNumbers = func(spec *types.OvfCreateImportSpecResult) {
 	s := &spec.ImportSpec.(*types.VirtualMachineImportSpec).ConfigSpec
 	for _, d := range s.DeviceChange {
-		n := &d.GetVirtualDeviceConfigSpec().Device.GetVirtualDevice().UnitNumber
+		n := d.GetVirtualDeviceConfigSpec().Device.GetVirtualDevice().UnitNumber
 		if *n == 0 {
 			*n = -1
 		}

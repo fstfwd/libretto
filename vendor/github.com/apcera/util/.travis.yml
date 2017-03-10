@@ -1,0 +1,17 @@
+language: go
+
+go:
+  - 1.6
+  - 1.7
+  - tip
+
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq liblzma-dev
+
+install:
+  - go get -u github.com/apcera/logray
+
+script:
+  - go vet $(go list ./... | grep -v /vendor/)
+  - go test -v -race $(go list ./... | grep -v /vendor/)
