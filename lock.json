@@ -1,0 +1,279 @@
+{
+    "memo": "42a355269bce74773c4c8605d0cdb2bdcac854000ddff288a35909a90f67c94c",
+    "projects": [
+        {
+            "name": "cloud.google.com/go",
+            "version": "v0.7.0",
+            "revision": "2e6a95edb1071d750f6d7db777bf66cd2997af6c",
+            "packages": [
+                "compute/metadata",
+                "internal"
+            ]
+        },
+        {
+            "name": "github.com/Azure/azure-sdk-for-go",
+            "version": "v8.1.1-beta",
+            "revision": "4897648e310020dae650a89c31ff633284c13a24",
+            "packages": [
+                "arm/compute",
+                "arm/network",
+                "arm/resources/resources",
+                "arm/storage",
+                "management",
+                "management/hostedservice",
+                "management/location",
+                "management/virtualmachine",
+                "management/virtualmachinedisk",
+                "management/virtualnetwork",
+                "management/vmutils",
+                "storage"
+            ]
+        },
+        {
+            "name": "github.com/Azure/go-autorest",
+            "version": "v7.3.0",
+            "revision": "ec5f4903f77ed9927ac95b19ab8e44ada64c1356",
+            "packages": [
+                "autorest",
+                "autorest/azure",
+                "autorest/date",
+                "autorest/to",
+                "autorest/validation"
+            ]
+        },
+        {
+            "name": "github.com/apcera/util",
+            "branch": "master",
+            "revision": "5a8346ac2b8dd5bdb7fa279dc2ced448d8003e67",
+            "packages": [
+                "uuid"
+            ]
+        },
+        {
+            "name": "github.com/aws/aws-sdk-go",
+            "version": "v1.8.2",
+            "revision": "d122c9c0e1d875585918c85cf6eba7e5e43f221d",
+            "packages": [
+                "aws",
+                "aws/awserr",
+                "aws/awsutil",
+                "aws/client",
+                "aws/client/metadata",
+                "aws/corehandlers",
+                "aws/credentials",
+                "aws/credentials/ec2rolecreds",
+                "aws/credentials/endpointcreds",
+                "aws/credentials/stscreds",
+                "aws/defaults",
+                "aws/ec2metadata",
+                "aws/endpoints",
+                "aws/request",
+                "aws/session",
+                "aws/signer/v4",
+                "private/protocol",
+                "private/protocol/ec2query",
+                "private/protocol/query",
+                "private/protocol/query/queryutil",
+                "private/protocol/rest",
+                "private/protocol/xml/xmlutil",
+                "service/ec2",
+                "service/sts"
+            ]
+        },
+        {
+            "name": "github.com/dgrijalva/jwt-go",
+            "version": "v3.0.0",
+            "revision": "d2709f9f1f31ebcda9651b03077758c1f3a0018c",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/go-ini/ini",
+            "version": "v1.26.0",
+            "revision": "1730955e3146956d6a087861380f9b4667ed5071",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/golang/protobuf",
+            "branch": "master",
+            "revision": "c9c7427a2a70d2eb3bafa0ab2dc163e45f143317",
+            "packages": [
+                "proto"
+            ]
+        },
+        {
+            "name": "github.com/googleapis/gax-go",
+            "branch": "master",
+            "revision": "9af46dd5a1713e8b5cd71106287eba3cefdde50b",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/gophercloud/gophercloud",
+            "branch": "master",
+            "revision": "9a5595b8ffe429439c63781cdc312c254e4ad990",
+            "packages": [
+                ".",
+                "openstack",
+                "openstack/blockstorage/v1/volumes",
+                "openstack/compute/v2/extensions/floatingips",
+                "openstack/compute/v2/extensions/startstop",
+                "openstack/compute/v2/extensions/volumeattach",
+                "openstack/compute/v2/flavors",
+                "openstack/compute/v2/images",
+                "openstack/compute/v2/servers",
+                "openstack/identity/v2/tenants",
+                "openstack/identity/v2/tokens",
+                "openstack/identity/v3/tokens",
+                "openstack/networking/v2/networks",
+                "openstack/utils",
+                "pagination"
+            ]
+        },
+        {
+            "name": "github.com/jmespath/go-jmespath",
+            "version": "0.2.2",
+            "revision": "3433f3ea46d9f8019119e7dd41274e112a2359a9",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/pyr/egoscale",
+            "branch": "master",
+            "revision": "987e683a7552f34ee586217d1cc8507d52e80ab9",
+            "packages": [
+                "src/egoscale"
+            ]
+        },
+        {
+            "name": "github.com/vmware/govmomi",
+            "version": "v0.13.0",
+            "revision": "b4a3f7a1d0352866c03f42208cddceb53fe12d16",
+            "packages": [
+                ".",
+                "find",
+                "list",
+                "object",
+                "property",
+                "session",
+                "task",
+                "vim25",
+                "vim25/debug",
+                "vim25/methods",
+                "vim25/mo",
+                "vim25/progress",
+                "vim25/soap",
+                "vim25/types",
+                "vim25/xml"
+            ]
+        },
+        {
+            "name": "golang.org/x/crypto",
+            "branch": "master",
+            "revision": "459e26527287adbc2adcc5d0d49abff9a5f315a7",
+            "packages": [
+                "curve25519",
+                "ed25519",
+                "ed25519/internal/edwards25519",
+                "pkcs12",
+                "pkcs12/internal/rc2",
+                "ssh"
+            ]
+        },
+        {
+            "name": "golang.org/x/net",
+            "branch": "master",
+            "revision": "78ebe5c8b6a27ec13109c73c22193d618270e1e1",
+            "packages": [
+                "context",
+                "context/ctxhttp",
+                "http2",
+                "http2/hpack",
+                "idna",
+                "internal/timeseries",
+                "lex/httplex",
+                "trace"
+            ]
+        },
+        {
+            "name": "golang.org/x/oauth2",
+            "branch": "master",
+            "revision": "7fdf09982454086d5570c7db3e11f360194830ca",
+            "packages": [
+                ".",
+                "google",
+                "internal",
+                "jws",
+                "jwt"
+            ]
+        },
+        {
+            "name": "golang.org/x/text",
+            "branch": "master",
+            "revision": "fc7fa097411d30e6708badff276c4c164425590c",
+            "packages": [
+                "internal/gen",
+                "internal/triegen",
+                "internal/ucd",
+                "secure/bidirule",
+                "transform",
+                "unicode/bidi",
+                "unicode/cldr",
+                "unicode/norm",
+                "unicode/rangetable"
+            ]
+        },
+        {
+            "name": "google.golang.org/api",
+            "branch": "master",
+            "revision": "16ab375f94503bfa0d19db78e96bffbe1a34354f",
+            "packages": [
+                "compute/v1",
+                "gensupport",
+                "googleapi",
+                "googleapi/internal/uritemplates"
+            ]
+        },
+        {
+            "name": "google.golang.org/appengine",
+            "version": "v1.0.0",
+            "revision": "150dc57a1b433e64154302bdc40b6bb8aefa313a",
+            "packages": [
+                ".",
+                "internal",
+                "internal/app_identity",
+                "internal/base",
+                "internal/datastore",
+                "internal/log",
+                "internal/modules",
+                "internal/remote_api",
+                "internal/urlfetch",
+                "urlfetch"
+            ]
+        },
+        {
+            "name": "google.golang.org/grpc",
+            "version": "v1.2.0",
+            "revision": "cdee119ee21e61eef7093a41ba148fa83585e143",
+            "packages": [
+                ".",
+                "codes",
+                "credentials",
+                "grpclog",
+                "internal",
+                "keepalive",
+                "metadata",
+                "naming",
+                "peer",
+                "stats",
+                "tap",
+                "transport"
+            ]
+        }
+    ]
+}
